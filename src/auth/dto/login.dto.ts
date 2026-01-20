@@ -1,0 +1,11 @@
+import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
+
+export class LoginDto {
+  @IsEmail({}, { message: 'รูปแบบอีเมลไม่ถูกต้อง' })
+  @IsNotEmpty({ message: 'กรุณากรอกอีเมล' })
+  email: string;
+
+  @IsString()
+  @IsNotEmpty({ message: 'กรุณากรอกรหัสผ่าน' })
+  password: string;
+}
